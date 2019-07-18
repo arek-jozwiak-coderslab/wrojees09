@@ -25,7 +25,8 @@ public class CalculatorTest {
         assertEquals(30, calculator.add(15, 15));
     }
     @Test
-    public void multiple(){
-        assertEquals(RESULT_MULTIPLE, calculator.multiple(A,B));
+    public void given20and20_whenMultiple_thenReturn400(){
+       assertEquals(RESULT_MULTIPLE, calculator.multiple(A,B));
     }
+
 }

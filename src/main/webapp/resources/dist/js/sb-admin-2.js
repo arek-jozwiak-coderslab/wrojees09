@@ -1,3 +1,9 @@
+$(document).on("click", "a.confirm", function(e) {
+    e.preventDefault();
+    if (confirm('Czy jesteś pewien ?')) {
+        location.href = $(this).attr('href');
+    }
+});
 /*!
  * Start Bootstrap - SB Admin 2 for Bootstrap 4 v4.0.2 (http://github.com/dpwilhelmsen/sb-admin-2-bootstrap-4)
  * Copyright 2013-2017 Daniel Wilhelmsen
