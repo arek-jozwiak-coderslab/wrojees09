@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib tagdir="/WEB-INF/tags/util" prefix="util"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -360,25 +361,22 @@
                         <div class="card-header">DataTables Advanced Tables</div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover"
-                                   id="dataTables-example">
+                            <util:pagination thispage="${page}"></util:pagination>
+                            <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Nazwa</th>
                                     <th>Actoin</th>
-
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${drinks}" var="drink">
-                                <tr >
-                                    <td>${drink.id}</td>
-                                    <td>${drink.name}</td>
-                                    <td><a href="/drink/delete/${drink.id}">delete</a> </td>
-
-                                </tr>
-
+                                <c:forEach items="${page.content}" var="drink">
+                                    <tr>
+                                        <td>${drink.id}</td>
+                                        <td>${drink.name}</td>
+                                        <td><a class="confirm" href="/drink/delete/${drink.id}">delete</a> </td>
+                                    </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
@@ -427,6 +425,12 @@
                 $('#dataTables-example_wrapper .row:last-child').addClass('mb-1 align-items-baseline');
             }
         });
+    });
+    $(document).on("click", "a.confirm", function(e) {
+        e.preventDefault();
+        if (confirm('Czy jesteś pewien ?')) {
+            location.href = $(this).attr('href');
+        }
     });
 </script>
 </body>
