@@ -1,8 +1,10 @@
-package pl.coderslab.warjees09;
+package pl.coderslab.warjees09.auth;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pl.coderslab.warjees09.auth.User;
+import pl.coderslab.warjees09.auth.UserService;
 
 @Controller
 public class UserController {

@@ -1,4 +1,4 @@
-package pl.coderslab.warjees09;
+package pl.coderslab.warjees09.drink;
 
 import lombok.Data;
 
@@ -15,4 +15,6 @@ public class Drink {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String originalFileName;
+    private String fileName;
 }

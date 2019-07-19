@@ -1,4 +1,4 @@
-package pl.coderslab.warjees09;
+package pl.coderslab.warjees09.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

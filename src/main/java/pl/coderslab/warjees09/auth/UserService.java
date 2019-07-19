@@ -1,4 +1,4 @@
-package pl.coderslab.warjees09;
+package pl.coderslab.warjees09.auth;
 
 public interface UserService {
 

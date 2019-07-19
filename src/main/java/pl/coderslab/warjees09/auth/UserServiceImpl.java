@@ -1,4 +1,4 @@
-package pl.coderslab.warjees09;
+package pl.coderslab.warjees09.auth;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
