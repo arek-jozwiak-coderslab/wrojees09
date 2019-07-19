@@ -32,6 +32,7 @@ public class FileSystemStorageService implements StorageService {
 
     @Override
     public String store(MultipartFile file) {
+        String filename = StringUtils.cleanPath(file.getOriginalFilename());
         String fileExtension = com.google.common.io.Files.getFileExtension(file.getOriginalFilename());
         String filename = UUID.randomUUID().toString() + "." + fileExtension;
         log.info("filename {}", filename);
